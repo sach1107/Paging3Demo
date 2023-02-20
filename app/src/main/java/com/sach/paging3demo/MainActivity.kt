@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.sach.paging3demo.adapter.LoaderAdapter
 import com.sach.paging3demo.adapter.QuotePagingAdapter
 import com.sach.paging3demo.databinding.ActivityMainBinding
 import com.sach.paging3demo.viewmodel.QuoteViewModel
@@ -25,7 +26,10 @@ class MainActivity : AppCompatActivity() {
         binding.quoteList.apply {
             layoutManager = LinearLayoutManager(context)
             setHasFixedSize(true)
-            this.adapter = adapter
+            this.adapter = adapter.withLoadStateHeaderAndFooter(
+                header = LoaderAdapter(),
+                footer = LoaderAdapter()
+            )
         }
 
         viewModel.list.observe(this) {
