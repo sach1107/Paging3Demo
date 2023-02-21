@@ -3,6 +3,7 @@ package com.sach.paging3demo
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import androidx.paging.ExperimentalPagingApi
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sach.paging3demo.adapter.LoaderAdapter
 import com.sach.paging3demo.adapter.QuotePagingAdapter
@@ -11,6 +12,7 @@ import com.sach.paging3demo.viewmodel.QuoteViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
+@ExperimentalPagingApi
 class MainActivity : AppCompatActivity() {
 
     private lateinit var viewModel: QuoteViewModel

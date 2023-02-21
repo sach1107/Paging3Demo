@@ -5,7 +5,7 @@ import androidx.paging.PagingState
 import com.sach.paging3demo.models.Result
 import com.sach.paging3demo.quoteapi.QuoteApi
 
-class QuotePagingSource(val quoteApi: QuoteApi) : PagingSource<Int, Result>() {
+class QuotePagingSource(private val quoteApi: QuoteApi) : PagingSource<Int, Result>() {
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Result> {
         return try {

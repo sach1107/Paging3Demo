@@ -1,6 +1,6 @@
 package com.sach.paging3demo.models
 
-data class QuoteList(
+data class QuoteResult(
     val count: Int,
     val lastItemIndex: Int,
     val page: Int,
